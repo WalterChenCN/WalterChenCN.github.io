@@ -2,9 +2,11 @@
 title: pyenv-virtualenv使用指南
 date: 2016-09-07 15:52:00
 tags: 
- - Python
- - Pyenv
- - Virtualenv
+	- Python
+	- Pyenv
+	- Virtualenv
+photos:
+ - http://image.pplock.com/2016/09/21/Olivier-10.jpg
  
 ---
 

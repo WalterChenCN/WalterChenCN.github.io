@@ -1,9 +1,11 @@
 ---
 title: 解决hexo Error Cannot find module
-date: 2016-09-07 15:52:00
+date: 2016-09-01 15:52:00
 tags: 
- - Hexo
- - Mac
+	- Hexo
+	- Mac
+photos:
+ - http://image.pplock.com/2016/09/21/Olivier-6.jpg
  
 ---
 
