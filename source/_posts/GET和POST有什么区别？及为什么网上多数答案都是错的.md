@@ -4,6 +4,8 @@ date: 2016-10-14 11:11:35
 tags:
   - http
   - web
+photos:  
+  - http://hbfile.b0.upaiyun.com/img/home/banner/831ddeb7a10db97ef41fa64f694d3def0d4bb34012cedb
 ---
 > 来自：南柯之石 - 博客
 >
