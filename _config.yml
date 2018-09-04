@@ -70,5 +70,5 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@github.com:cwwCN/cwwCN.github.io.git
+  repository: git@github.com:walterchencn/walterchencn.github.io.git
   branch: master

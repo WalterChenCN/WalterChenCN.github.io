@@ -1,11 +1,10 @@
----
 title: GET和POST有什么区别？及为什么网上多数答案都是错的
 date: 2016-10-14 11:11:35
 tags:
   - http
   - web
 photos:  
-  - http://hbfile.b0.upaiyun.com/img/home/banner/831ddeb7a10db97ef41fa64f694d3def0d4bb34012cedb
+  - 'https://source.unsplash.com/random/1366x768/?2016-10-14 12:11:35'
 ---
 > 来自：南柯之石 - 博客
 >
@@ -14,7 +13,7 @@ photos:
 > 链接：http://www.cnblogs.com/nankezhishi/archive/2012/06/09/getandpost.html
 
 如果有人问你，GET和POST，有什么区别？你会如何回答？
-
+<!--more-->
 #### 我的经历
 
 前几天有人问我这个问题。我说GET是用于获取数据的，POST，一般用于将数据发给服务器之用。
