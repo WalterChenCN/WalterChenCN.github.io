@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="tmp," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Walter's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="为什么要这么做？ 直接把命令的输出（比如grep/awk/sed/find或是你的程序输出结果）放到剪切板上，这么就可以在IM中CTRL + V粘贴后发出去。避免操作的繁琐和跳跃：把结果输出到文件、用文本编辑器打开文件、选中文本、CTRL + C。  通过命令将文件内容拷贝到剪切板，以避免拷贝错误、操作的跳跃（跳到文件编辑器）">
+<meta name="keywords" content="tmp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="复制命令行输出到系统剪贴板上">
+<meta property="og:url" content="http://yoursite.com/2018/09/04/复制命令行输出到系统剪贴板上/index.html">
+<meta property="og:site_name" content="Walter&#39;s Blog">
+<meta property="og:description" content="为什么要这么做？ 直接把命令的输出（比如grep/awk/sed/find或是你的程序输出结果）放到剪切板上，这么就可以在IM中CTRL + V粘贴后发出去。避免操作的繁琐和跳跃：把结果输出到文件、用文本编辑器打开文件、选中文本、CTRL + C。  通过命令将文件内容拷贝到剪切板，以避免拷贝错误、操作的跳跃（跳到文件编辑器）">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://source.unsplash.com/random/1366x768/?2018-09-04 09:48:39">
+<meta property="og:updated_time" content="2018-09-04T09:49:30.249Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="复制命令行输出到系统剪贴板上">
+<meta name="twitter:description" content="为什么要这么做？ 直接把命令的输出（比如grep/awk/sed/find或是你的程序输出结果）放到剪切板上，这么就可以在IM中CTRL + V粘贴后发出去。避免操作的繁琐和跳跃：把结果输出到文件、用文本编辑器打开文件、选中文本、CTRL + C。  通过命令将文件内容拷贝到剪切板，以避免拷贝错误、操作的跳跃（跳到文件编辑器）">
+<meta name="twitter:image" content="https://source.unsplash.com/random/1366x768/?2018-09-04 09:48:39">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/04/复制命令行输出到系统剪贴板上/"/>
+
+
+
+
+
+  <title>复制命令行输出到系统剪贴板上 | Walter's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Walter's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Life is too short. What are we doing?</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/复制命令行输出到系统剪贴板上/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Walter">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Walter's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">复制命令行输出到系统剪贴板上</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T17:48:39+08:00">
+                2018-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="https://source.unsplash.com/random/1366x768/?2018-09-04 09:48:39" rel="gallery_cjlnn46na000g4gxkqicxaiuq"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://source.unsplash.com/random/1366x768/?2018-09-04 09:48:39" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <h1 id="为什么要这么做？"><a href="#为什么要这么做？" class="headerlink" title="为什么要这么做？"></a>为什么要这么做？</h1><ul>
+<li><p>直接把命令的输出（比如grep/awk/sed/find或是你的程序输出结果）放到剪切板上，这么就可以在IM中CTRL + V粘贴后发出去。<br>避免操作的繁琐和跳跃：把结果输出到文件、用文本编辑器打开文件、选中文本、CTRL + C。</p>
+</li>
+<li><p>通过命令将文件内容拷贝到剪切板，以避免拷贝错误、操作的跳跃（跳到文件编辑器）</p>
+<a id="more"></a>
+</li>
+</ul>
+<h1 id="Windows下"><a href="#Windows下" class="headerlink" title="Windows下"></a>Windows下</h1><p>使用系统自带的<code>clip</code>命令。<br># 位于<code>C:\Windows\system32\clip.exe</code>。</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">echo Hello | clip</span><br><span class="line"># 将字符串Hello放入Windows剪贴板</span><br><span class="line"></span><br><span class="line">dir | clip</span><br><span class="line"># 将dir命令输出（当前目录列表）放入Windows剪贴板</span><br><span class="line"></span><br><span class="line">clip &lt; README.TXT</span><br><span class="line"># 将readme.txt的文本放入Windows剪贴板</span><br><span class="line"></span><br><span class="line">echo | clip</span><br><span class="line"># 将一个空行放入Windows剪贴板，即清空Windows剪贴板</span><br></pre></td></tr></table></figure>
+<h1 id="Linux下"><a href="#Linux下" class="headerlink" title="Linux下"></a>Linux下</h1><p>使用<code>xsel</code>命令。</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cat README.TXT | xsel</span><br><span class="line">cat README.TXT | xsel -b # 如有问题可以试试-b选项</span><br><span class="line">xsel &lt; README.TXT</span><br><span class="line"># 将readme.txt的文本放入剪贴板</span><br><span class="line"></span><br><span class="line">xsel -c</span><br><span class="line"># 清空剪贴板</span><br></pre></td></tr></table></figure>
+<h1 id="Mac下"><a href="#Mac下" class="headerlink" title="Mac下"></a>Mac下</h1><p>使用<code>pbcopy</code>命令。 # 对应有个<code>pbpaste</code>命令。</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;Hello World!&apos; | pbcopy</span><br><span class="line"># 将字符串Hello World放入剪贴板</span><br></pre></td></tr></table></figure>
+<h1 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h1><h2 id="要复制结果又想看到命令的输出"><a href="#要复制结果又想看到命令的输出" class="headerlink" title="要复制结果又想看到命令的输出"></a>要复制结果又想看到命令的输出</h2><p>命令的结果输出时，如果给复制命令（即上面提到的命令clip、xsel、pbcopy）那么命令输出就看不到了。如果你想先看到命令的输出，可以下面这么做。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ echo &apos;Hello World!&apos; | tee tmp.file.txt</span><br><span class="line">Hello World!</span><br><span class="line">$ xsel &lt; tmp.file.txt</span><br><span class="line">$ rm tmp.file.txt</span><br></pre></td></tr></table></figure>
+<p>即先使用<code>tee</code>命令把输出输到控制台和一个文件中。</p>
+<p>命令执行完成后，再把输出的内容放到剪贴板中。</p>
+<h2 id="复制SSH的公有KEY"><a href="#复制SSH的公有KEY" class="headerlink" title="复制SSH的公有KEY"></a>复制SSH的公有KEY</h2><p>使用下面的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pbcopy &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>注：不同系统使用不同的复制命令</p>
+<p>避免用文本编辑器打开这个文件、选中文本、CTRL + C这样繁琐操作。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="http://www.cnblogs.com/mattmonkey/archive/2011/08/20/2301554.html" target="_blank" rel="noopener">Windows下把命令行结果存放在剪贴板</a></li>
+<li><a href="http://linux.die.net/man/1/xsel" target="_blank" rel="noopener">xsel(1) - Linux man page</a></li>
+<li><a href="http://www.worldhello.net/gotgithub/02-join-github/010-account-setup.html#id4" target="_blank" rel="noopener">命令行下可直接用pbcopy命令将文件内容拷贝到剪切板以避免拷贝错误</a></li>
+<li><a href="http://langui.sh/2010/11/14/pbpaste-pbcopy-in-mac-os-x-or-terminal-clipboard-fun/" target="_blank" rel="noopener">pbpaste &amp; pbcopy in Mac OS X (or: Terminal + Clipboard = Fun!)</a></li>
+</ul>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>还在用的Windows、吐槽弱暴命令行cmd的程序猿们，推荐使用<a href="http://www.cygwin.com/" target="_blank" rel="noopener">cygwin</a>，可以看看我的博文<a href="http://oldratlee.com/post/2012-12-22/stunning-cygwin" target="_blank" rel="noopener">惊艳的cygwin——Windows下的Linux命令行环境</a>。</p>
+<blockquote>
+<p>转载自<a href="http://oldratlee.com/" target="_blank" rel="noopener">李鼎的博客</a></p>
+</blockquote>
+<p><section style="text-align: center; font-size: 1em; font-weight: inherit; text-decoration: inherit; color: rgb(255, 255, 255); border-color: rgb(117, 117, 118); box-sizing: border-box;"><section data-width="2em" style="width: 2em; height: 2em; margin-right: auto; margin-left: auto; border-radius: 100%; box-sizing: border-box; background-color: rgb(117, 117, 118);"><section style="display: inline-block; padding-right: 0.5em; padding-left: 0.5em; font-size: 1em; line-height: 2; box-sizing: border-box; color: inherit;"><section class="135brush" data-brushtype="text" style="box-sizing: border-box; color: inherit;">完</section></section></section><section style="margin-top: -1em; margin-bottom: 1em; box-sizing: border-box; color: inherit;"><section data-width="35%" style="border-top-width: 1px; border-top-style: solid; width: 35%; float: left; border-color: rgb(117, 117, 118); box-sizing: border-box; color: inherit;"></section><section data-width="35%" style="border-top-width: 1px; border-top-style: solid; width: 35%; float: right; border-color: rgb(117, 117, 118); box-sizing: border-box; color: inherit;"></section></section></section><br><br></p>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/tmp/" rel="tag"># tmp</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/04/兔子和兔子窝-RabbitMQ-Python入门经典/" rel="next" title="兔子和兔子窝--RabbitMQ+Python入门经典">
+                <i class="fa fa-chevron-left"></i> 兔子和兔子窝--RabbitMQ+Python入门经典
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/04/使用-supervisor-管理进程/" rel="prev" title="使用 supervisor 管理进程">
+                使用 supervisor 管理进程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Walter" />
+            
+              <p class="site-author-name" itemprop="name">Walter</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要这么做？"><span class="nav-number">1.</span> <span class="nav-text">为什么要这么做？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows下"><span class="nav-number">2.</span> <span class="nav-text">Windows下</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux下"><span class="nav-number">3.</span> <span class="nav-text">Linux下</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mac下"><span class="nav-number">4.</span> <span class="nav-text">Mac下</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最佳实践"><span class="nav-number">5.</span> <span class="nav-text">最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要复制结果又想看到命令的输出"><span class="nav-number">5.1.</span> <span class="nav-text">要复制结果又想看到命令的输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复制SSH的公有KEY"><span class="nav-number">5.2.</span> <span class="nav-text">复制SSH的公有KEY</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">7.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Walter</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
