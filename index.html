@@ -129,6 +129,36 @@
 
 
 
+
+  <!-- Start of Async Drift Code -->    
+ <!--  <script>
+  "use strict";
+
+  !function() {
+    var t = window.driftt = window.drift = window.driftt || [];
+    if (!t.init) {
+      if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+      t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+      t.factory = function(e) {
+        return function() {
+          var n = Array.prototype.slice.call(arguments);
+          return n.unshift(e), t.push(n), t;
+        };
+      }, t.methods.forEach(function(e) {
+        t[e] = t.factory(e);
+      }), t.load = function(t) {
+        var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+        var i = document.getElementsByTagName("script")[0];
+        i.parentNode.insertBefore(o, i);
+      };
+    }
+  }();
+  drift.SNIPPET_VERSION = '0.3.1';
+  drift.load('femzd8bkg9md');
+  </script> -->
+  <!-- End of Async Drift Code -->
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -247,6 +277,146 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/06/npm安装后在node-modules找不到模块/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Walter">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Walter's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/06/npm安装后在node-modules找不到模块/" itemprop="url">npm安装后模块后在node_modules找不到</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-06T11:22:26+08:00">
+                2018-09-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="https://source.unsplash.com/random/960x540/?2018-09-06 03:22:26" rel="gallery_cjlq7zll70007wkxkh6u84rno"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://source.unsplash.com/random/960x540/?2018-09-06 03:22:26" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        
+          <h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>最近通过npm安装mocha，运行命令提示 『 Error: Cannot find test framework “mocha” in /Users/walter/node_modules 』，这时候看node_modules文件夹下确实没有<strong>mocha</strong><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/06/npm安装后在node-modules找不到模块/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/使用-supervisor-管理进程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -319,7 +489,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://source.unsplash.com/random/960x540/?2018-09-04 09:50:14" rel="gallery_cjlojk7g9000clpxk133c7u0h"
+                 href="https://source.unsplash.com/random/960x540/?2018-09-04 09:50:14" rel="gallery_cjlq7zllj000ewkxk4a6vo9fm"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://source.unsplash.com/random/960x540/?2018-09-04 09:50:14" itemprop="contentUrl"/>
               </a>
@@ -460,7 +630,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://source.unsplash.com/random/1366x768/?2018-09-04 09:48:39" rel="gallery_cjlojk7gc000glpxk6mlt7o1l"
+                 href="https://source.unsplash.com/random/1366x768/?2018-09-04 09:48:39" rel="gallery_cjlq7zlll000jwkxk2w87st2k"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://source.unsplash.com/random/1366x768/?2018-09-04 09:48:39" itemprop="contentUrl"/>
               </a>
@@ -603,7 +773,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://source.unsplash.com/random/1366x768/?2018-09-04 16:09:48" rel="gallery_cjlojk7ga000elpxkvw4bao1y"
+                 href="https://source.unsplash.com/random/1366x768/?2018-09-04 16:09:48" rel="gallery_cjlq7zllk000gwkxkpbqhjfnv"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://source.unsplash.com/random/1366x768/?2018-09-04 16:09:48" itemprop="contentUrl"/>
               </a>
@@ -743,7 +913,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://source.unsplash.com/random/1366x768/?2016-10-14 12:11:35" rel="gallery_cjlojk7fu0001lpxkc8zlmzk1"
+                 href="https://source.unsplash.com/random/1366x768/?2016-10-14 12:11:35" rel="gallery_cjlq7zlkz0002wkxk1gu00hmk"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://source.unsplash.com/random/1366x768/?2016-10-14 12:11:35" itemprop="contentUrl"/>
               </a>
@@ -888,7 +1058,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://source.unsplash.com/random/1366x768/?2016-09-30 12:00:00" rel="gallery_cjlojk7g30006lpxkzd08p2fe"
+                 href="https://source.unsplash.com/random/1366x768/?2016-09-30 12:00:00" rel="gallery_cjlq7zlla0008wkxk8d34majg"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://source.unsplash.com/random/1366x768/?2016-09-30 12:00:00" itemprop="contentUrl"/>
               </a>
@@ -1028,7 +1198,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://source.unsplash.com/random/1366x768/?2016-09-30 11:00:00" rel="gallery_cjlojk7fy0003lpxk5j5dmsey"
+                 href="https://source.unsplash.com/random/1366x768/?2016-09-30 11:00:00" rel="gallery_cjlq7zll20004wkxkbzsfneo8"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://source.unsplash.com/random/1366x768/?2016-09-30 11:00:00" itemprop="contentUrl"/>
               </a>
@@ -1168,7 +1338,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://source.unsplash.com/random/1366x768/?2016-09-07 15:52:00" rel="gallery_cjlojk7g40008lpxk0fr56j0k"
+                 href="https://source.unsplash.com/random/1366x768/?2016-09-07 15:52:00" rel="gallery_cjlq7zllc0009wkxktvryg4vf"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://source.unsplash.com/random/1366x768/?2016-09-07 15:52:00" itemprop="contentUrl"/>
               </a>
@@ -1308,7 +1478,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://source.unsplash.com/random/960×540/?2018-01-07 21:36:01" rel="gallery_cjlojk7g50009lpxkfp77wrw7"
+                 href="https://source.unsplash.com/random/960×540/?2018-01-07 21:36:01" rel="gallery_cjlq7zlle000bwkxkzg9dhfd4"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://source.unsplash.com/random/960×540/?2018-01-07 21:36:01" itemprop="contentUrl"/>
               </a>
@@ -1448,7 +1618,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://source.unsplash.com/random/1366x768/?2016-09-01 12:52:00" rel="gallery_cjlojk7g7000blpxkrsj8u2ns"
+                 href="https://source.unsplash.com/random/1366x768/?2016-09-01 12:52:00" rel="gallery_cjlq7zllh000cwkxkaf8m5n1n"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://source.unsplash.com/random/1366x768/?2016-09-01 12:52:00" itemprop="contentUrl"/>
               </a>
@@ -1554,7 +1724,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1567,7 +1737,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

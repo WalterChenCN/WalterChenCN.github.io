@@ -136,6 +136,36 @@
 
 
 
+
+  <!-- Start of Async Drift Code -->    
+ <!--  <script>
+  "use strict";
+
+  !function() {
+    var t = window.driftt = window.drift = window.driftt || [];
+    if (!t.init) {
+      if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+      t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+      t.factory = function(e) {
+        return function() {
+          var n = Array.prototype.slice.call(arguments);
+          return n.unshift(e), t.push(n), t;
+        };
+      }, t.methods.forEach(function(e) {
+        t[e] = t.factory(e);
+      }), t.load = function(t) {
+        var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+        var i = document.getElementsByTagName("script")[0];
+        i.parentNode.insertBefore(o, i);
+      };
+    }
+  }();
+  drift.SNIPPET_VERSION = '0.3.1';
+  drift.load('femzd8bkg9md');
+  </script> -->
+  <!-- End of Async Drift Code -->
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -323,7 +353,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://source.unsplash.com/random/960×540/?2018-01-07 21:36:01" rel="gallery_cjlojk7g50009lpxkfp77wrw7"
+                 href="https://source.unsplash.com/random/960×540/?2018-01-07 21:36:01" rel="gallery_cjlq7zlle000bwkxkzg9dhfd4"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://source.unsplash.com/random/960×540/?2018-01-07 21:36:01" itemprop="contentUrl"/>
               </a>
@@ -799,7 +829,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -812,7 +842,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

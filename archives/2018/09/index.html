@@ -129,6 +129,36 @@
 
 
 
+
+  <!-- Start of Async Drift Code -->    
+ <!--  <script>
+  "use strict";
+
+  !function() {
+    var t = window.driftt = window.drift = window.driftt || [];
+    if (!t.init) {
+      if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+      t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+      t.factory = function(e) {
+        return function() {
+          var n = Array.prototype.slice.call(arguments);
+          return n.unshift(e), t.push(n), t;
+        };
+      }, t.methods.forEach(function(e) {
+        t[e] = t.factory(e);
+      }), t.load = function(t) {
+        var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+        var i = document.getElementsByTagName("script")[0];
+        i.parentNode.insertBefore(o, i);
+      };
+    }
+  }();
+  drift.SNIPPET_VERSION = '0.3.1';
+  drift.load('femzd8bkg9md');
+  </script> -->
+  <!-- End of Async Drift Code -->
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -245,7 +275,7 @@
         
           
         
-        嗯..! 目前共计 9 篇日志。 继续努力。
+        嗯..! 目前共计 10 篇日志。 继续努力。
       </span>
 
       
@@ -259,6 +289,43 @@
           <div class="collection-title">
             <h1 class="archive-year" id="archive-year-2018">2018</h1>
           </div>
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/09/06/npm安装后在node-modules找不到模块/" itemprop="url">
+              
+                <span itemprop="name">npm安装后模块后在node_modules找不到</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-09-06T11:22:26+08:00"
+              content="2018-09-06" >
+          09-06
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
         
         
 
@@ -421,7 +488,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -434,7 +501,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
