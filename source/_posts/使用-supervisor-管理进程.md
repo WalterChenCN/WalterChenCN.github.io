@@ -1,7 +1,7 @@
 ---
 title: 使用 supervisor 管理进程
 tags:
-  - tmp
+  - 运维
 photos:
   - 'https://source.unsplash.com/random/960x540/?2018-09-04 09:50:14'
 date: 2018-09-04 17:50:14

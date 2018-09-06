@@ -1,25 +1,23 @@
 ---
-title: {{ title }}
-date: {{ date }}
+title: npm安装后模块后在node_modules找不到
 tags:
-  - 
+  - null
 photos:
-  - 'https://source.unsplash.com/random/960x540/?{{ date }}'
+  - 'https://source.unsplash.com/random/960x540/?2018-09-06 03:22:26'
+date: 2018-09-06 11:22:26
 ---
 
+#### 问题描述
 
-
-
+最近通过npm安装mocha，运行命令提示 『 Error: Cannot find test framework "mocha" in /Users/walter/node_modules 』，这时候看node_modules文件夹下确实没有**mocha** 
 <!--more-->
+#### 解决方案
 
+我们可以通过在node_modules文件夹里增加全局模块的快捷方式或者链接，解决方法如下：
 
+> npm link mocha
 
-
-
-
-
-
-
+OK，正常啦
 
 
 
