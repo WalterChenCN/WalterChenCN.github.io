@@ -1,7 +1,7 @@
 ---
 title: npm安装后模块后在node_modules找不到
 tags:
-  - null
+  - 运维
 photos:
   - 'https://source.unsplash.com/random/960x540/?2018-09-06 03:22:26'
 date: 2018-09-06 11:22:26
