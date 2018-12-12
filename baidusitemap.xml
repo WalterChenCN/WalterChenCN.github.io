@@ -3,6 +3,24 @@
 
 
     
+    
+  <url>
+    <loc>https://walterchencn.github.io/2018/09/06/npm%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97%E5%90%8E%E5%9C%A8node-modules%E6%89%BE%E4%B8%8D%E5%88%B0cant%20find%20in%20node_modules/</loc>
+    <lastmod>2018-09-13T03:15:48.892Z</lastmod>
+    <data>
+        <display>
+        <title>npm安装后模块后在node_modules找不到Cannot find in node_modules</title>
+        <pubTime>2018-09-06T03:22:26.000Z</pubTime>
+        
+        <tag>运维</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>https://walterchencn.github.io/2016/09/03/%E3%80%8A%E5%A2%9E%E5%B9%BF%E8%B4%A4%E6%96%87%E3%80%8B%E9%89%B4%E8%B5%8F/</loc>
     <lastmod>2018-09-12T07:15:31.652Z</lastmod>
@@ -19,24 +37,6 @@
     </data>
     </url>
 
-    
-  <url>
-    <loc>https://walterchencn.github.io/2018/09/06/npm%E5%AE%89%E8%A3%85%E5%90%8E%E5%9C%A8node-modules%E6%89%BE%E4%B8%8D%E5%88%B0%E6%A8%A1%E5%9D%97/</loc>
-    <lastmod>2018-09-06T12:09:26.578Z</lastmod>
-    <data>
-        <display>
-        <title>npm安装后模块后在node_modules找不到</title>
-        <pubTime>2018-09-06T03:22:26.000Z</pubTime>
-        
-        <tag>运维</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
     
     
     
