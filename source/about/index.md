@@ -12,3 +12,5 @@ comments: false
 -->
 
 *   <span class="fa fa-wechat"></span>&nbsp; Wechat: ichat-wenwu
+
+*   <span class="far fa-envelope"></span>&nbsp; Email: walterchenchn@gmail.com
